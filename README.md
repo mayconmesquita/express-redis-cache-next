@@ -1,6 +1,7 @@
 ### This fork has some new features:
 - Release all fixes/features from 2018 - today (original repo is outdated);
 - Remove deprecated use of `_headers` on node v12+ (https://github.com/rv-kip/express-redis-cache-next/pull/126).
+- Compatible with Redis v5+.
 
 Fork from: https://github.com/rv-kip/express-redis-cache-next
 

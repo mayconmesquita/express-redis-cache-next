@@ -1,6 +1,6 @@
 {
   "name": "express-redis-cache-next",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "A module to make Express interact with Redis (create, get, delete). You can automatically cache all your most popular routes in Redis.",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rv-kip/express-redis-cache.git"
+    "url": "https://github.com/mayconmesquita/express-redis-cache-next.git"
   },
   "author": {
     "name": "Francois Vespa",
@@ -60,10 +60,12 @@
     }
   ],
   "license": "MIT",
+  "peerDependencies": {
+    "redis": "^5.6.0"
+  },
   "dependencies": {
     "async": "^2.6.1",
-    "colors": "^1.3.0",
-    "redis": "^2.4.2"
+    "colors": "^1.3.0"
   },
   "directories": {
     "test": "test"
