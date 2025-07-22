@@ -2,6 +2,7 @@
 - Release all fixes/features from 2018 - today (original repo is outdated);
 - Remove deprecated use of `_headers` on node v12+ (https://github.com/rv-kip/express-redis-cache-next/pull/126).
 - Compatible with Redis v5+.
+- Added support for master/slave replication (You can pass `writeClient` and `readClient`).
 
 Fork from: https://github.com/rv-kip/express-redis-cache-next
 
@@ -279,7 +280,7 @@ cache.on('disconnected', function () {
 });
 ```
 
-**Note** You can get the connexion status at any time by getting the property `cache.connected` which returns a boolean (true = connected, false = disconnected).
+**Note** You can get the connexion status at any time by getting the property `cache.writeClientConnected` and `cache.readClientConnected` which returns a boolean (true = connected, false = disconnected).
 
 ## deprecated
 
@@ -337,7 +338,8 @@ Where `options` is an object that has the following properties:
 | **port**      | `Number`     | `undefined` | Redis server port
 | **prefix**       | `String`  | `require('express-redis-cache-next/package.json').config.prefix` | Default prefix (This will be prepended to all entry names) |
 | **expire**   | `Number` | `undefined` | Default life time of entries in seconds |
-| **client**   | `RedisClient` | `require('redis').createClient({ host: cache.host, port: cache.port })` | A Redis client |
+| **writeClient**   | `RedisClient` | `require('redis').createClient({ host: cache.host, port: cache.port })` | A Redis client (supports master/slave replication) |
+| **readClient**   | `RedisClient` | `require('redis').createClient({ host: cache.host, port: cache.port })` | A Redis client (supports master/slave replication) |
 
 # API
 
